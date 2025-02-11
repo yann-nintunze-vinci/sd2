@@ -20,7 +20,7 @@ public class Ordonnancement {
     //renvoie la tache prioritaire
     //renvoie null si plus de tache presente
     public Tache attribuerTache() {
-        for (int i = NIVEAU_PRIORITE_MAX; i >= 1 ; i--) {
+        for (int i = NIVEAU_PRIORITE_MAX; i >= 1; i--) {
             var deque = taches.get(i);
             if (deque != null && !deque.isEmpty())
                 return deque.poll();
