@@ -14,6 +14,7 @@ public class ControleDAcces {
     // associe le badge a un employé
     public void donnerBadge(Badge b, Employe e) {
         attribution.put(b, e);
+        //O(1)
     }
 
     // met a jour les employés présents dans le batiment
@@ -21,6 +22,7 @@ public class ControleDAcces {
         Employe employe = attribution.get(b);
         if (employe == null) throw new IllegalArgumentException();
         presences.add(employe);
+        //O(1)
     }
 
     // met � jour les employ�s pr�sents dans le batiment
@@ -28,11 +30,13 @@ public class ControleDAcces {
         Employe employe = attribution.get(b);
         if (employe == null) throw new IllegalArgumentException();
         if (!presences.remove(employe)) throw new IllegalArgumentException();
+        //O(1)
     }
 
     // renvoie vrai si l'employ� est dans le batiment, faux sinon
     public boolean estDansBatiment(Employe e) {
         return presences.contains(e);
+        //O(1)
     }
 
 }

@@ -19,6 +19,7 @@ public class LocationPatins {
             this.pointureToCasiers.putIfAbsent(pointure, new ArrayDeque<>());
             this.pointureToCasiers.get(pointure).add(i);
         }
+        //O(N)
     }
 
     // date1 < date2
@@ -41,6 +42,7 @@ public class LocationPatins {
         casierToDate.put(casier, LocalTime.now());
 
         return casier;
+        //O(1)
     }
 
     public double libererCasier(int numeroCasier) {
@@ -54,6 +56,7 @@ public class LocationPatins {
         pointureToCasiers.get(pointure).add(numeroCasier);
 
         return prix(date1, LocalTime.now());
+        //O(1)
     }
 
 }
