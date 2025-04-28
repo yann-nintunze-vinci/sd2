@@ -298,6 +298,26 @@ public class Trees {
   // *******************************************************
 
   public static Tree lca(Tree n1, Tree n2) {
-    return null;
+    if (n1 == n2) {
+      return n1;
+    }
+
+    int root1 = toRoot(n1);
+    int root2 = toRoot(n2);
+
+    if (root1 > root2) {
+      return lca(n1.getParent(), n2);
+    } else if (root1 < root2) {
+      return lca(n1, n2.getParent());
+    }
+
+    return lca(n1.getParent(), n2.getParent());
+  }
+
+  private static int toRoot(Tree t) {
+    if (t == null) return 0;
+    if (t.getParent() == null) return 0;
+
+    return 1 + toRoot(t.getParent());
   }
 }

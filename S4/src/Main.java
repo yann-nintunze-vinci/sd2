@@ -13,12 +13,6 @@ public class Main {
 
     Tree t4 = new Tree(4, new Tree[]{t2, l5, t6});
 
-    Tree binaire = new Tree(4,
-        new Tree[]{new Tree(2,
-            new Tree[]{new Tree(1)}),
-            new Tree(6,
-                new Tree[]{new Tree(3), new Tree(7),})});
-
     System.out.println("nbrLeaves");
     System.out.println(Trees.nbrLeaves(t4));
 
@@ -69,6 +63,12 @@ public class Main {
     System.out.println("printPathV3");
     Trees.printPathV3(t4, 7);//4 - 6 - 7
 
+    Tree binaire = new Tree(4,
+        new Tree[]{new Tree(2,
+            new Tree[]{new Tree(1)}),
+            new Tree(6,
+                new Tree[]{new Tree(3), new Tree(7),})});
+
     System.out.println("toArray");
     System.out.println(Arrays.deepToString(Trees.toArray(binaire)));
 
@@ -76,5 +76,8 @@ public class Main {
 
     System.out.println("toTree");
     System.out.println(Trees.toTree(t4Array));
+
+    System.out.println("lca");
+    System.out.println(Trees.lca(t2, l3).getValue());//Attendu: 2
   }
 }
